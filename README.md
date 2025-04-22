@@ -1,10 +1,27 @@
-﻿# MatriculaITM
-# Tomas Gonzalez Zapata & Juan Jose Aguirre Velazquez
-Pruebas en POSTMAN
-# 1. POST - Ingresar matrícula
+# MatriculaITM  
+
+**Autores:**  
+- Tomas Gonzalez Zapata  
+- Juan Jose Aguirre Velazquez  
+
+## Pruebas en Postman
+
+---
+
+### 1. POST - Ingresar matrícula  
+
+**URL:**  
+```http
+POST http://localhost:<puerto>/api/Matricula/Ingresar
+```
+
+**Headers:**  
+```
 Content-Type: application/json
-POST http://localhost:<pueto>/api/Matricula/Ingresar
-Body:
+```
+
+**Body:**  
+```json
 {
   "idEstudiante": 1,
   "NumeroCreditos": 12,
@@ -14,12 +31,28 @@ Body:
   "SemestreMatricula": "2025-1",
   "MateriasMatriculadas": "Matemáticas, Física, Programación"
 }
-# 2. GET - Consultar matrícula por documento y semestre
-GET http://localhost:44327/api/Matricula/ConsultarPorDocumentoYSemestre?documento=123456789&semestre=2025-1
+```
 
-# 3. PUT - Actualizar matrícula
-PUT http://localhost:44327/api/Matricula/Actualizar
-Body:
+---
+
+### 2. GET - Consultar matrícula por documento y semestre  
+
+**URL:**  
+```http
+GET http://localhost:<puerto>/api/Matricula/ConsultarPorDocumentoYSemestre?documento=123456789&semestre=2025-1
+```
+
+---
+
+### 3. PUT - Actualizar matrícula  
+
+**URL:**  
+```http
+PUT http://localhost:<puerto>/api/Matricula/Actualizar
+```
+
+**Body:**  
+```json
 {
   "idMatricula": 1,
   "idEstudiante": 1,
@@ -30,5 +63,20 @@ Body:
   "SemestreMatricula": "2025-1",
   "MateriasMatriculadas": "Matemáticas, Física, Programación, Estadística"
 }
-# 4. 4. DELETE - Eliminar matrícula
-DELETE http://localhost:44327/api/Matricula/Eliminar?id=1
+```
+
+---
+
+### 4. DELETE - Eliminar matrícula  
+
+**URL:**  
+```http
+DELETE http://localhost:<puerto>/api/Matricula/Eliminar?id=1
+```
+
+---
+
+## Notas
+
+- Reemplazar `<puerto>` con el puerto real que tu aplicación esté usando en Visual Studio o IIS Express (por ejemplo: `44327`).
+- Asegúrate de tener un estudiante registrado en la base de datos con `idEstudiante` correspondiente antes de hacer pruebas de matrícula.
